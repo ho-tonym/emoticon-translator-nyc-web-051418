@@ -21,7 +21,7 @@ def get_japanese_emoticon(location, emoticon)
   hash_emoticon = load_library(location)
   hash_emoticon.each do |categories|
     if categories[0] == 'get_emoticon'
-      if !categories[1][emoticon].empty?
+      if !categories[1][emoticon].empty
         return categories[1][emoticon]
       else
         return "Sorry, that emoticon was not found"
