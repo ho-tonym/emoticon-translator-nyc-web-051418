@@ -6,7 +6,7 @@ def load_library(location)
   hash = {
     "get_meaning" => {},
     "get_emoticon" => {}
-  }
+}
   emoticon.each do |meaning,emoticons|
     english_emoticon = emoticons[0]
     japanese_emoticon = emoticons[1]
@@ -21,7 +21,7 @@ def get_japanese_emoticon(location, emoticon)
   hash_emoticon = load_library(location)
   hash_emoticon.each do |categories|
     if categories[0] == 'get_emoticon'
-      if !categories[1][emoticon].empty
+      if categories[1][emoticon] != nil
         return categories[1][emoticon]
       else
         return "Sorry, that emoticon was not found"
